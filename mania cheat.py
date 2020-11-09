@@ -31,9 +31,13 @@ while True:
             # draw the circle in the output image, then draw a rectangle
             # corresponding to the center of the circle
             cv2.circle(img, (x, y), r, (0, 255, 0), 5) #was 4
-            if r<45:
-                #mouse.move(x,y)
+            print(r)
+            if r<65:
+                mouse.move(x,y)
+                #time.sleep(0.01)
+                #mouse.click(button="left")
                 playsound(wavfile)
+
                                 
                 #cv2.rectangle(img, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
 
@@ -41,10 +45,10 @@ while True:
 
     #cv2.rectangle(img, (200, 500), (200+400, 500+100), (255, 0, 0), 2)
 
-    elapsed_time = str(time.time() - start_time)
-    cv2.putText(img, elapsed_time, (5,20), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,0,255), 2)
+    #elapsed_time = str(time.time() - start_time)
+    #cv2.putText(img, elapsed_time, (5,20), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,0,255), 2)
 
-    cv2.imshow('screen', img)
+    #cv2.imshow('screen', img)
 
     if (cv2.waitKey(1) & 0xFF) == ord('q'):
         cv2.destroyAllWindow()
